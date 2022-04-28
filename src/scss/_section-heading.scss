@@ -1,0 +1,13 @@
+.section-heading {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 1;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 120%;
+    }
+}

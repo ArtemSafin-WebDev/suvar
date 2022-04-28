@@ -1,0 +1,332 @@
+.how-to-get {
+    padding: 12rem 0;
+
+    @include breakpoint(mobile) {
+        padding: 4rem 0;
+    }
+}
+
+.how-to-get__content {
+    padding-left: var(--sidebar-width);
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.how-to-get__heading {
+    margin-bottom: 3.5rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+}
+
+.how-to-get__steps {
+    margin-bottom: 4rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+
+        .swiper-slide {
+            width: 24rem;
+            box-sizing: content-box;
+            padding-right: 1.6rem;
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+    .swiper-container {
+        overflow: visible;
+        margin: 0;
+        width: 100%;
+    }
+
+    @include breakpointMF(small-tablet) {
+        .swiper-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-gap: 1.6rem;
+        }
+    }
+}
+
+.how-to-get__steps-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 3.2rem;
+    border-radius: 2rem;
+    border: 1px solid #dedede;
+    box-sizing: border-box;
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        border-radius: 1.2rem;
+    }
+}
+
+.how-to-get__steps-card-number {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 5.6rem;
+    height: 5.6rem;
+    background: var(--primary-color);
+    color: white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    text-align: center;
+    letter-spacing: -0.07em;
+    border-radius: 50%;
+    margin-bottom: 2.8rem;
+
+    @include breakpoint(mobile) {
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 2rem;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+}
+
+.how-to-get__steps-card-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    margin-bottom: 2.4rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.how-to-get__steps-card-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+}
+
+.how-to-get__row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 1.6rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 0;
+    }
+}
+
+.how-to-get__info {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+
+        @include breakpoint(mobile) {
+            margin-bottom: 1rem;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    b {
+        font-weight: 700;
+
+        @include breakpoint(mobile) {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            color: rgba(#171723, 0.9);
+        }
+    }
+}
+
+.how-to-get__passport {
+    padding: 2.4rem 3.2rem;
+    background-color: #fff;
+    background: #f2f2f2;
+    border-radius: 2rem;
+    display: flex;
+    align-items: flex-start;
+
+    @include breakpoint(mobile) {
+        padding: 2.2rem;
+        border-radius: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.how-to-get__passport-image {
+    width: 6.8rem;
+    height: auto;
+    flex-shrink: 0;
+    margin-right: 3.2rem;
+    filter: drop-shadow(0.4rem 0.4rem 2.4rem rgba(72, 13, 17, 0.23));
+
+    @include breakpoint(mobile) {
+        width: 4.2rem;
+        margin-right: 3.2rem;
+        margin-left: 1.1rem;
+    }
+}
+
+.how-to-get__passport-content {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.how-to-get__passport-heading {
+    font-style: normal;
+
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        color: rgba(#171723, 0.9);
+        margin-bottom: 1rem;
+    }
+}
+
+.how-to-get__passport-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+}
+
+.how-to-get__department {
+    background: #f2f2f2;
+    border-radius: 2rem;
+    padding: 2.4rem;
+    display: flex;
+    align-items: flex-start;
+
+    @include breakpoint(mobile) {
+        padding: 2.2rem;
+        border-radius: 1.2rem;
+    }
+}
+
+.how-to-get__department-image {
+    flex-shrink: 0;
+    margin-right: 2.2rem;
+    height: auto;
+    width: 8.8rem;
+    margin-top: -1rem;
+
+    @include breakpoint(mobile) {
+        width: 5.8rem;
+        margin-right: 2.2rem;
+        margin-left: 0.2rem;
+        margin-top: -0.6rem;
+    }
+}
+
+.how-to-get__department-content {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.how-to-get__department-heading {
+    font-style: normal;
+
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        margin-bottom: 1rem;
+        color: rgba(#171723, 0.9);
+    }
+}
+.how-to-get__department-shedule-items {
+    max-width: 22rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 3.2rem;
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        grid-gap: 2rem;
+    }
+}
+
+.how-to-get__department-schedule-days {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+}
+
+.how-to-get__department-schedule-time {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+}

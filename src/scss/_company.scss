@@ -1,0 +1,471 @@
+.company {
+    padding: 12rem 0;
+
+    @include breakpoint(mobile) {
+        padding: 4rem 0;
+    }
+}
+
+.company__heading {
+    margin-bottom: 6rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
+.company__content {
+    padding-left: var(--sidebar-width);
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.company__top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+    }
+}
+
+.company__complex-slider {
+    margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+    .swiper-container {
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        width: 38rem;
+        box-sizing: content-box;
+        padding-right: 3rem;
+
+        @include breakpoint(mobile) {
+            width: 16rem;
+            padding-right: 0.5rem;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
+.company__complex-slider-btn {
+    display: flex;
+    flex-grow: 1;
+    border: 1px solid #dedede;
+    border-radius: 2rem;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    padding: 3rem;
+    box-sizing: border-box;
+    align-items: center;
+
+    @include breakpoint(mobile) {
+        padding: 1.2rem;
+        border-radius: 0.8rem;
+    }
+
+    .no-touch &:not(.active):hover,
+    .touch &:not(.active):active {
+        border-color: var(--primary-color);
+    }
+
+    &.active {
+        background: #f2f2f2;
+        border-color: #f2f2f2;
+        cursor: default;
+
+        .company__complex-slider-btn-photo-container {
+            &::after {
+                opacity: 1;
+            }
+
+            svg {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.company__complex-slider-btn-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.6rem;
+    line-height: 3rem;
+    width: 50%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
+}
+
+.company__complex-slider-btn-photo-container {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    width: 8.2rem;
+    margin-left: 3rem;
+    flex-shrink: 0;
+
+    @include breakpoint(mobile) {
+        width: 3.2rem;
+        margin-left: 2rem;
+    }
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000000, 0.5);
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 3.2rem;
+        height: 2.4rem;
+        fill: white;
+        transition: opacity 0.2s;
+        opacity: 0;
+        z-index: 10;
+
+        @include breakpoint(mobile) {
+            width: 1.4rem;
+            height: 1.1rem;
+        }
+    }
+}
+
+.company__complex-slider-btn-photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.company__buildings-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-bottom: 6.4rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-gap: 0.5rem;
+        align-items: center;
+    }
+}
+
+.company__buildings-nav-link {
+    padding: 2rem 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    user-select: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    border: 1px solid #dedede;
+    border-radius: 1rem;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+
+    @include breakpoint(mobile) {
+        padding: 0.8rem 1rem;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 1.2;
+        border-radius: 0.6rem;
+        display: flex;
+    }
+
+    .no-touch &:hover,
+    .touch &:active,
+    &.active {
+        background: #171723;
+        color: white;
+        border-color: #171723;
+    }
+}
+
+.company__buildings-tabs,
+.company__tabs {
+    position: relative;
+}
+
+.company__buildings-tabs-item,
+.company__tabs-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, visibility 0s linear 0.4s;
+
+    &.active {
+        position: relative;
+        z-index: 10;
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity 0.4s, visibility 0.4s;
+    }
+}
+
+.company__building-info-heading {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    margin-bottom: 1rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 130%;
+        margin-bottom: 2rem;
+    }
+}
+
+.company__building-info-row {
+    display: grid;
+
+    @include breakpointMF(small-tablet) {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        grid-gap: 3rem;
+    }
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 2rem;
+    }
+}
+
+.company__building-info-contacts {
+    @include breakpointMF(small-tablet) {
+        grid-column: span 5;
+        align-self: flex-end;
+    }
+}
+
+.company__building-info-contacts-heading {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin-bottom: 2.4rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        color: rgba(#171723, 0.9);
+        margin-bottom: 2rem;
+    }
+}
+
+.company__building-info-contacts-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 3rem;
+    grid-row-gap: 2.4rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 1.6rem;
+        grid-row-gap: 2rem;
+    }
+}
+
+.company__building-info-contacts-card-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-bottom: 0.6rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        margin-bottom: 0rem;
+    }
+}
+
+.company__building-info-contacts-card-link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.6rem;
+    line-height: 3rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.company__building-info-contacts-card-name {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    color: #a9a9af;
+    margin-top: 0.6rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 120%;
+        margin-top: 0.6rem;
+    }
+}
+
+.company__building-info-book {
+    margin-top: 3rem;
+
+    @include breakpoint(mobile) {
+        margin-top: 2rem;
+        display: flex;
+        width: 100%;
+    }
+}
+
+.company__building-info-schedule {
+    @include breakpointMF(small-tablet) {
+        grid-column: span 2;
+    }
+    background: #f2f2f2;
+    border-radius: 2rem;
+    padding: 3rem;
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        border-radius: 1.2rem;
+    }
+}
+
+.company__building-info-schedule-heading {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        margin-bottom: 1.7rem;
+        color: rgba(#171723, .9);
+    }
+}
+
+.company__building-info-schedule-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 2.4rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 1.6rem;
+        grid-row-gap: 2rem;
+    }
+}
+
+.company__building-info-schedule-card-days {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-bottom: 0.4rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+.company__building-info-schedule-card-time {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.6rem;
+    line-height: 3rem;
+
+    @include breakpoint(mobile) {
+        ont-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+}
+
+.company__building-info-schedule-card-remark {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    color: #a9a9af;
+    margin-top: 0.6rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 120%;
+        margin-top: 0.5rem;
+    }
+}

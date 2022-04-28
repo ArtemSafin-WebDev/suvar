@@ -1,0 +1,54 @@
+.btn-with-icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 1.7rem 2.4rem;
+    border: 1px solid var(--text-color);
+    border-radius: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: var(--text-color);
+    transition: color 0.2s, background-color 0.2s, border-color .2s;
+    justify-content: center;
+    text-align: center;
+
+
+    &--filled {
+        border-color: #F2F2F2;
+        background-color: #F2F2F2;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 1.3rem 2rem;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        border-radius: .8rem;
+    }
+
+    svg {
+        flex-shrink: 0;
+        width: 1.6rem;
+        height: 1.6rem;
+        fill: currentColor;
+        margin-right: 1.6rem;
+
+        @include breakpoint(mobile) {
+            margin-right: 1rem;
+        }
+    }
+
+    &:link,
+    &:visited {
+        color: var(--text-color);
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+    }
+}

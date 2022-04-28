@@ -1,0 +1,232 @@
+.about-life {
+    padding: 12rem 0;
+
+    @include breakpoint(mobile) {
+        padding: 4rem 0;
+    }
+}
+
+.about-life__main-heading {
+    margin-bottom: 6.5rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
+.about-life__content {
+    padding-left: var(--sidebar-width);
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.about-life__top-row {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 4.5rem;
+    gap: 3rem;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+.about-life__secondary-heading {
+    width: 50%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.about-life__slider {
+    .swiper-container {
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        height: 55.6rem;
+        width: 78rem;
+        padding-right: 3rem;
+        box-sizing: content-box;
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        @include breakpoint(mobile) {
+            width: 24rem;
+            height: 24rem;
+            padding-right: 1.5rem;
+        }
+
+        @include breakpointMF(small-tablet) {
+            &:nth-child(even) {
+                width: 38rem;
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                grid-template-rows: repeat(2, minmax(0, 1fr));
+                grid-gap: 1.6rem;
+            }
+        }
+    }
+}
+
+.about-life__slider-card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+    border-radius: 2rem;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    padding: 2.4rem;
+    color: white;
+    justify-content: flex-end;
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        border-radius: 1rem;
+        justify-content: flex-start;
+    }
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        .about-life__slider-card-bg-image {
+            transform: scale(1.03);
+        }
+    }
+}
+
+.about-life__slider-card-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+
+        
+    }
+}
+
+.about-life__slider-card-bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.about-life__slider-card-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    margin-bottom: 1.6rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 120%;
+        margin-bottom: 1rem;
+    }
+}
+
+.about-life__slider-card-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    @include breakpoint(mobile) {
+        display: block;
+        display: contents;
+    }
+}
+
+.about-life__slider-card-date {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+}
+
+.about-life__slider-card-photos {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    background-color: rgba(#000000, 0.5);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    border-radius: 0.6rem;
+
+    @include breakpoint(mobile) {
+        order: -1;
+        margin-bottom: auto;
+        padding: 0.5rem 0.8rem;
+        border-radius: 0.6rem;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.2;
+        align-self: flex-start;
+    }
+
+    svg {
+        flex-shrink: 0;
+        width: 1.6rem;
+        height: 1.6rem;
+        fill: currentColor;
+        margin-left: 1rem;
+
+        @include breakpoint(mobile) {
+            margin-left: 0.7rem;
+        }
+    }
+}
+
+.about-life__schedule {
+    margin-top: 4.8rem;
+
+    @include breakpoint(mobile) {
+        margin-top: 2rem;
+        display: flex;
+        width: 100%;
+    }
+}

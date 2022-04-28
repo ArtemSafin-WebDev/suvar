@@ -1,0 +1,284 @@
+.faq {
+    background: #171723;
+    color: white;
+    overflow: hidden;
+}
+
+.faq__inner {
+    position: relative;
+    padding: 12rem 0;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        padding: 4rem 0;
+    }
+}
+
+.faq__illustration {
+    position: absolute;
+    z-index: -1;
+    top: -5rem;
+    right: 11rem;
+    pointer-events: none;
+
+    @include breakpoint(mobile) {
+        right: -1rem;
+        top: -1rem;
+    }
+    // background-color: red;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(23, 24, 35, 0.56), rgba(23, 24, 35, 0.56))
+    }
+}
+
+.faq__get-consultation {
+    @include breakpoint(mobile) {
+        order: -1;
+    }
+}
+
+.faq__illustration-image {
+    height: 46rem;
+    width: auto;
+    max-width: none;
+    display: block;
+
+    @include breakpoint(mobile) {
+        height: 20rem;
+    }
+
+}
+.faq__heading {
+    margin-bottom: 6rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
+.faq__top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+    @include breakpoint(mobile) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 2rem;
+        align-items: stretch;
+        justify-content: flex-start;
+        margin-bottom: 2rem;
+    }
+}
+
+.faq__tabs-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    @include breakpoint(mobile) {
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        margin: 0 calc(-1 * var(--content-padding));
+        padding: 0 var(--content-padding);
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+
+        @include noScrollbar();
+    }
+}
+
+.faq__tabs-nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.8rem 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    flex-shrink: 0;
+    white-space: nowrap;
+    user-select: none;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+    @include breakpoint(mobile) {
+        padding: 0.8rem 1rem;
+        border-radius: 0.6rem;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active,
+    &.active {
+        background-color: white;
+        border-color: white;
+        color: var(--text-color);
+    }
+}
+
+.faq__content {
+    padding-left: var(--sidebar-width);
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.faq__accordions-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 1.6rem;
+    align-items: flex-start;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 0.4rem;
+        align-items: stretch;
+    }
+}
+
+.faq__accordions-col {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 1.6rem;
+
+    @include breakpoint(mobile) {
+        display: block;
+        display: contents;
+    }
+}
+
+.faq__accordion {
+    background: #28283d;
+    border-radius: 2rem;
+    overflow: hidden;
+    @include breakpoint(mobile) {
+        border-radius: 1.2rem;
+    }
+}
+
+.faq__accordion-btn {
+    min-height: 10rem;
+    padding: 2.4rem;
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.4rem;
+
+    cursor: pointer;
+    user-select: none;
+
+    @include breakpoint(mobile) {
+        min-height: 6.4rem;
+        padding: 2rem;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+    }
+    svg {
+        flex-shrink: 0;
+        width: 3.2rem;
+        height: 3.2rem;
+        transition: transform 0.2s;
+        margin-left: 3rem;
+        @include breakpoint(mobile) {
+            width: 2.4rem;
+            height: 2.4rem;
+            margin-left: 2rem;
+        }
+    }
+
+    .js-accordion.active & {
+        svg {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.faq__accordion-btn-text {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.faq__accordion-content {
+    height: 0;
+    overflow: hidden;
+}
+
+.faq__accordion-content-inner {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding: 0 2.4rem;
+    padding-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    p {
+        margin-bottom: 2rem;
+
+        @include breakpoint(mobile) {
+            margin-bottom: 1.5rem;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.faq__tabs {
+    position: relative;
+}
+
+.faq__tabs-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, visibility 0s linear 0.4s;
+    z-index: 5;
+    &.active {
+        position: relative;
+        z-index: 10;
+        transition: opacity 0.4s, visibility 0.4s;
+        opacity: 1;
+        visibility: inherit;
+    }
+}

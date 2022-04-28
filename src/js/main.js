@@ -22,6 +22,8 @@ import appCards from './appCards';
 import tabs2 from './tabs-2';
 import showAll from './contactsShowAll';
 import maps from './maps';
+import ticker from './ticker';
+import reviewsSlider from './reviewsSlider';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,6 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
     appCards();
     showAll();
     maps();
+    ticker();
+    reviewsSlider();
 
 });
 

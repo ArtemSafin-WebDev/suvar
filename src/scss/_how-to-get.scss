@@ -14,6 +14,14 @@
     }
 }
 
+.how-to-get__ticker {
+    margin-bottom: 6rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
 .how-to-get__heading {
     margin-bottom: 3.5rem;
 

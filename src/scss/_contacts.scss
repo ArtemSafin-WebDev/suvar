@@ -75,6 +75,7 @@
 
 .contacts__form-heading {
     margin-bottom: 1.6rem;
+    line-height: 4rem;
 
     @include breakpoint(mobile) {
         margin-bottom: 3rem;
@@ -209,6 +210,13 @@
         font-size: 1.3rem;
         line-height: 1.2;
         padding: 1.5rem 2.4rem;
+    }
+}
+
+.contacts__ticker {
+    margin-bottom: 6rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
     }
 }
 
@@ -561,6 +569,10 @@
     color: var(--primary-color);
     margin-top: 2.5rem;
     display: inline-flex;
+
+    .all-shown & {
+        display: none;
+    }
 
     @include breakpoint(mobile) {
         margin-top: 2rem;

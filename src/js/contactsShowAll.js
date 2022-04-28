@@ -10,9 +10,9 @@ export default function showAll() {
     elements.forEach(element => {
         element.addEventListener('click', event => {
             event.preventDefault();
-            element.parentElement.classList.add("all-shown");
+            element.parentElement.classList.toggle("all-shown");
 
-            element.remove();
+          
 
             ScrollTrigger.refresh();
         })

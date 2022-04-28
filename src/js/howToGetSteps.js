@@ -1,6 +1,7 @@
 import { Swiper, Navigation, EffectFade } from 'swiper';
-import { isMobile } from './utilities';
 Swiper.use([Navigation, EffectFade]);
+import { isMobile } from './utilities';
+
 
 export default function howToGetSteps() {
     if (!isMobile()) return;

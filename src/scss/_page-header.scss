@@ -6,6 +6,11 @@
     height: auto;
     z-index: 70;
     color: white;
+
+    .mobile-menu-open &,
+    .modal-open & {
+        padding-right: var(--sb-width, 0);
+    }
 }
 
 .page-header__row {
@@ -26,6 +31,8 @@
 }
 
 .page-header__logo {
+    position: relative;
+    z-index: 90;
     @include breakpointMF(small-tablet) {
         grid-column: span 2;
     }
@@ -78,10 +85,11 @@
 
     .no-touch &:hover,
     .touch &:active {
-      
-        & > span {
-            background-size: 100% 1px;
-        }
+        color: var(--primary-color);
+
+        // & > span {
+        //     background-size: 100% 1px;
+        // }
     }
 }
 
@@ -153,16 +161,19 @@
 }
 
 .page-header__burger {
-   
     display: inline-flex;
     flex-direction: column;
     margin-top: 0.2rem;
-
+    position: relative;
+    z-index: 90;
+    margin: -2rem 0;
+    margin-top: -1.7rem;
+    padding: 2rem 0;
+    padding-top: 1.7rem;
     @include breakpoint(mobile) {
-        margin-top: 0;
+        margin: -1.5rem;
+        padding: 1.5rem;
     }
-
-   
 
     & > span {
         height: 2px;
@@ -181,7 +192,31 @@
         }
     }
 
-    .no-touch &:hover {
+    .mobile-menu-open & {
+        & > span {
+            &:nth-child(1) {
+                transform: translateY(0.4rem) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                transform: translateY(-0.4rem) rotate(-45deg);
+            }
+        }
+
+        @include breakpoint(mobile) {
+            & > span {
+                &:nth-child(1) {
+                    transform: translateY(0.3rem) rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    transform: translateY(-0.3rem) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    body:not(.mobile-menu-open).no-touch &:hover {
         & > span {
             &:nth-child(1) {
                 transform: translateX(0.2rem);

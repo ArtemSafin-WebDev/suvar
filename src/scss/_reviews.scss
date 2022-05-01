@@ -78,6 +78,7 @@
     border-radius: 2rem;
     margin-bottom: 2.4rem;
     min-height: 18rem;
+ 
     @include breakpoint(mobile) {
         padding: 2rem;
         border-radius: 1.2rem;
@@ -91,6 +92,7 @@
     line-height: 2.8rem;
     font-weight: 400;
     position: relative;
+    overflow: hidden;
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -140,45 +142,45 @@
     }
 }
 
-// .reviews__slider-card-text-full,
-// .reviews__slider-card-text-short {
-//     position: relative;
-//     z-index: 10;
-//     opacity: 1;
-//     visibility: inherit;
-//     transition: opacity .4s, visibility .4s;
-
-// }
-
-// .reviews__slider-card-content:not(.all-shown) .reviews__slider-card-text-full,
-// .reviews__slider-card-content.all-shown .reviews__slider-card-text-short {
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     height: auto;
-//     position: absolute;
-//     z-index: 5;
-//     transition: opacity .4s, visibility 0s linear .4s;
-//     opacity: 0;
-//     visibility: hidden;
-// }
-
-.reviews__slider-card-text-full {
-    display: none;
-
-    .all-shown & {
-        display: block;
-    }
-}
-
+.reviews__slider-card-text-full,
 .reviews__slider-card-text-short {
-    display: block;
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+    visibility: inherit;
+    transition: opacity .4s, visibility .4s;
 
-    .all-shown & {
-        display: none;
-    }
 }
+
+.reviews__slider-card-content:not(.all-shown) .reviews__slider-card-text-full,
+.reviews__slider-card-content.all-shown .reviews__slider-card-text-short {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 5;
+    transition: opacity .4s, visibility 0s linear .4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+// .reviews__slider-card-text-full {
+//     display: none;
+
+//     .all-shown & {
+//         display: block;
+//     }
+// }
+
+// .reviews__slider-card-text-short {
+//     display: block;
+
+//     .all-shown & {
+//         display: none;
+//     }
+// }
 
 .reviews__slider-card-author {
     display: flex;

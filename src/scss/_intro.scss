@@ -73,6 +73,7 @@
     line-height: 20rem;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
+    margin-left: -.07em;
 
     @include breakpoint(mobile) {
         font-style: normal;

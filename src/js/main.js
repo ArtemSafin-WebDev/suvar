@@ -1,14 +1,10 @@
-import polyfills from './polyfills';
 import './lazyload';
 import detectTouch from './detectTouch';
 import setScrollbarWidth from './setScrollbarWidth';
 import validation from './validation';
 import customSelects from './customSelects';
 import masks from './masks';
-import fileUpload from './fileUpload';
 import anchorLinks from './anchorLinks';
-import mediaPlayer from './mediaPlayer';
-import datepicker from './datepicker';
 import accordions from './accordions';
 import modals from './modals';
 
@@ -24,22 +20,19 @@ import showAll from './contactsShowAll';
 import maps from './maps';
 import ticker from './ticker';
 import reviewsSlider from './reviewsSlider';
+import menu from './menu';
 
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', function () {
-    polyfills();
     detectTouch();
     setScrollbarWidth();
     validation();
     customSelects();
     masks();
-    fileUpload();
     anchorLinks();
     accordions();
-    mediaPlayer();
     modals();
-    datepicker();
     aboutLife();
     tabs();
     tabs2();
@@ -50,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     maps();
     ticker();
     reviewsSlider();
+    menu();
 
 });
 

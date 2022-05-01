@@ -11,6 +11,7 @@ export default function reviewsSlider() {
             slidesPerView: 'auto',
             watchOverflow: true,
             // slideToClickedSlide: true,
+            threshold: 10,
             speed: 500,
             navigation: {
                 nextEl: element.querySelector('.slider-arrows__btn--next'),

@@ -21,6 +21,7 @@ import maps from './maps';
 import ticker from './ticker';
 import reviewsSlider from './reviewsSlider';
 import menu from './menu';
+import modalSlider from './modalSlider';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ticker();
     reviewsSlider();
     menu();
+    modalSlider();
 
 });
 

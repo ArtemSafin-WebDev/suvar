@@ -11,11 +11,16 @@
     overflow-x: hidden;
     // opacity: 0;
     // visibility: hidden;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(#171723, .95);
     transition: opacity 0.4s, visibility 0s linear 0.4s, transform 0.8s;
     transform: translateY(-100%);
-    backdrop-filter: blur(30px);
+   
     -webkit-overflow-scrolling: touch;
+
+    @supports (backdrop-filter: blur(30px)) {
+        backdrop-filter: blur(30px);
+        background-color: rgba(0, 0, 0, 0.2);
+    }
 
     @include breakpoint(mobile) {
         height: 100%;

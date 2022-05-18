@@ -69,6 +69,8 @@ export default function aboutLife() {
             watchOverflow: true,
             slidesPerView: 'auto',
             speed: 700,
+            loop: true,
+            loopedSlides: 4,
             navigation: {
                 nextEl: nextArrow,
                 prevEl: prevArrow

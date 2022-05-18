@@ -22,12 +22,14 @@ import ticker from './ticker';
 import reviewsSlider from './reviewsSlider';
 import menu from './menu';
 import modalSlider from './modalSlider';
+import clientHeight from './clientHeight';
 
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', function () {
     detectTouch();
     setScrollbarWidth();
+    clientHeight();
     validation();
     customSelects();
     masks();
@@ -46,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     reviewsSlider();
     menu();
     modalSlider();
+   
 
 });
 
